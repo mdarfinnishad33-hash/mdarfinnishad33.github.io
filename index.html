@@ -4,6 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md. Arfin Nishad | English Teacher & Spoken English Coach</title>
+<meta name="description" content="Md. Arfin Nishad is an English teacher and spoken English coach helping students build real communication skills. Spoken English, grammar, writing, and IELTS preparation.">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="https://mdnishadarfin44.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237c5cff'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+
+<!-- Link preview (Facebook, WhatsApp, LinkedIn, X) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Md. Arfin Nishad | English Teacher & Spoken English Coach">
+<meta property="og:description" content="Practical English for speaking, writing, grammar, and IELTS. Building confident English speakers.">
+<meta property="og:url" content="https://mdnishadarfin44.github.io/">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdnishadarfin44/portfolio_asset/main/image-removebg-preview-removebg-preview.png">
+<meta name="twitter:card" content="summary">
+
+<!-- Structured data for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Md. Arfin Nishad",
+  "jobTitle": "English Language Teacher and Spoken English Coach",
+  "url": "https://mdnishadarfin44.github.io/",
+  "sameAs": [
+    "https://facebook.com/arfiin.niishad",
+    "https://instagram.com/arfin.nishad06/",
+    "https://www.youtube.com/@Know_nowbd",
+    "https://linkedin.com/in/md-arfin-nishad-7589b4250",
+    "https://x.com/NishadArfi87113"
+  ]
+}
+</script>
+
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   :root{
@@ -27,6 +58,7 @@
   }
   a{text-decoration:none;color:inherit;}
   ul{list-style:none;}
+  a:focus-visible, button:focus-visible, summary:focus-visible{outline:2px solid var(--accent2);outline-offset:3px;}
 
   /* Background orbs */
   .bg-orbs{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
@@ -53,6 +85,26 @@
   }
   .lang-switch button.active{background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;}
 
+  /* Floating WhatsApp + back to top */
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;z-index:140;width:56px;height:56px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+    box-shadow:0 8px 25px rgba(37,211,102,.45);animation:waPulse 2.6s ease-in-out infinite;
+    transition:transform .25s;
+  }
+  .wa-float:hover{transform:scale(1.1);}
+  @keyframes waPulse{
+    0%,100%{box-shadow:0 8px 25px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.45);}
+    50%{box-shadow:0 8px 25px rgba(37,211,102,.4),0 0 0 14px rgba(37,211,102,0);}
+  }
+  .to-top{
+    position:fixed;bottom:90px;right:28px;z-index:140;width:44px;height:44px;border-radius:50%;
+    background:var(--card);border:1px solid var(--border);color:var(--text);font-size:1.2rem;cursor:pointer;
+    opacity:0;pointer-events:none;transition:all .3s;
+  }
+  .to-top.show{opacity:1;pointer-events:auto;}
+  .to-top:hover{border-color:var(--accent2);color:var(--accent2);}
+
   /* Nav */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
@@ -66,8 +118,12 @@
   }
   .logo{font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
   .nav-links{display:flex;gap:28px;flex-wrap:wrap;}
-  .nav-links a{font-size:0.92rem;color:var(--muted);transition:color .25s;}
-  .nav-links a:hover{color:var(--text);}
+  .nav-links a{font-size:0.92rem;color:var(--muted);transition:color .25s;position:relative;}
+  .nav-links a:hover, .nav-links a.active{color:var(--text);}
+  .nav-links a.active::after{
+    content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  }
   .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
   .nav-toggle span{width:24px;height:2px;background:var(--text);}
 
@@ -81,6 +137,7 @@
     }
     .nav-links.open{transform:translateY(0);opacity:1;}
     .nav-toggle{display:flex;}
+    .nav-links a.active::after{right:auto;width:30px;}
   }
 
   /* Hero */
@@ -119,13 +176,14 @@
   .hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto 32px;}
   .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
   .btn{
-    padding:14px 30px;border-radius:10px;font-weight:600;font-size:0.95rem;
+    display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;font-size:0.95rem;
     transition:all .3s;cursor:pointer;border:none;
   }
   .btn-primary{background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;}
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(124,92,255,0.4);}
   .btn-outline{border:1px solid var(--border);color:var(--text);}
   .btn-outline:hover{border-color:var(--accent2);color:var(--accent2);}
+  .btn-sm{margin-top:18px;padding:11px 24px;font-size:.9rem;}
 
   .profile-pic{
     width:150px;height:150px;border-radius:50%;object-fit:cover;
@@ -138,6 +196,7 @@
   .section{max-width:1100px;margin:0 auto;padding:100px 24px;}
   .section-tag{color:var(--accent2);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
   .section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:40px;}
+  .section-intro{color:var(--muted);max-width:720px;margin:-20px 0 36px;font-size:1.02rem;}
   .fade-in{opacity:0;transform:translateY(30px);transition:all .7s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0);}
 
@@ -199,18 +258,31 @@
     .highlight-banner{flex-direction:column;text-align:center;padding:26px 20px;gap:18px;}
   }
 
-  /* Work */
+  /* Programs */
   .project-card{
     background:var(--card);border:1px solid var(--border);border-radius:18px;
     padding:32px;margin-bottom:22px;transition:all .35s;
   }
   .project-card:hover{border-color:var(--accent3);transform:translateX(6px);}
-  .project-card h3{font-size:1.3rem;margin-bottom:10px;color:var(--text);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+  .card-top h3{font-size:1.3rem;color:var(--text);}
+  .badge{padding:5px 14px;border-radius:30px;font-size:.78rem;font-weight:700;letter-spacing:.5px;white-space:nowrap;}
+  .badge.enroll{background:rgba(37,211,102,.14);color:#4be38a;border:1px solid rgba(37,211,102,.5);}
+  .badge.soon{background:rgba(255,184,0,.12);color:#ffc43d;border:1px solid rgba(255,184,0,.45);}
   .project-card .desc{color:var(--muted);}
   .project-card .problem{color:var(--muted);font-size:0.95rem;padding-top:10px;border-top:1px solid var(--border);margin-top:14px;}
   .problem strong{color:var(--accent2);}
   .best-for{margin-top:12px;font-size:0.92rem;color:var(--muted);}
   .best-for strong{color:var(--accent3);}
+  .gets{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px;}
+  .gets strong{color:var(--accent2);font-size:.9rem;margin-right:4px;}
+  .gets span{padding:4px 12px;border:1px solid var(--border);border-radius:30px;font-size:.82rem;color:var(--muted);background:var(--bg2);}
+  .meta-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;
+    margin-top:18px;padding:16px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  }
+  .meta-grid small{display:block;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+  .meta-grid b{font-size:.92rem;font-weight:600;}
 
   /* Thoughts */
   .thoughts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
@@ -249,6 +321,64 @@
   .modal-box p{color:var(--muted);margin-bottom:16px;font-size:1rem;line-height:1.8;}
   @media(max-width:600px){.modal-box{padding:34px 22px;}}
 
+  /* Reviews */
+  .rv-wrap{position:relative;}
+  .rv-track{
+    display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;
+    scrollbar-width:thin;scrollbar-color:var(--border) transparent;-webkit-overflow-scrolling:touch;
+  }
+  .rv-track::-webkit-scrollbar{height:8px;}
+  .rv-track::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px;}
+  .rv-card{
+    flex:0 0 min(360px,84%);scroll-snap-align:start;background:var(--card);border:1px solid var(--border);
+    border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;
+    transition:border-color .3s,transform .3s;
+  }
+  .rv-card:hover{border-color:var(--accent1);transform:translateY(-4px);}
+  .rv-quote{font-size:2.8rem;line-height:.6;height:22px;color:var(--accent1);font-family:Georgia,serif;}
+  .rv-text{color:var(--text);font-size:.97rem;line-height:1.75;flex-grow:1;}
+  .rv-by{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--border);}
+  .rv-avatar{
+    width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:#fff;flex-shrink:0;background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  }
+  .rv-by b{display:block;font-size:.95rem;}
+  .rv-by small{color:var(--accent2);font-size:.78rem;}
+  .rv-nav{
+    display:none;position:absolute;top:40%;width:44px;height:44px;border-radius:50%;z-index:2;
+    background:var(--card);border:1px solid var(--border);color:var(--text);font-size:1.5rem;cursor:pointer;
+    transition:all .25s;line-height:1;
+  }
+  .rv-nav:hover{border-color:var(--accent2);color:var(--accent2);}
+  @media(min-width:769px){
+    .rv-nav{display:block;}
+    .rv-nav.prev{left:-20px;}
+    .rv-nav.next{right:-20px;}
+  }
+  .rv-form{margin-top:44px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px;max-width:720px;}
+  .rv-form h3{font-size:1.4rem;margin-bottom:6px;}
+  .rv-form .sub{color:var(--muted);font-size:.93rem;margin-bottom:22px;}
+  .rv-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:600px){.rv-row{grid-template-columns:1fr;}.rv-form{padding:26px 20px;}}
+  .rv-field{margin-bottom:16px;}
+  .rv-field label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px;}
+  .rv-field input[type=text], .rv-field select, .rv-field textarea{
+    width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+    padding:12px 14px;color:var(--text);font-family:inherit;font-size:.95rem;
+  }
+  .rv-field textarea{min-height:110px;resize:vertical;}
+  .rv-field input:focus, .rv-field select:focus, .rv-field textarea:focus{outline:none;border-color:var(--accent2);}
+  .stars{display:flex;gap:6px;}
+  .stars button{background:none;border:none;font-size:1.9rem;color:#3a3a52;cursor:pointer;line-height:1;transition:color .2s,transform .2s;}
+  .stars button.on{color:#ffc43d;}
+  .stars button:hover{transform:scale(1.15);}
+  .rv-consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted);margin-bottom:18px;}
+  .rv-consent input{margin-top:4px;accent-color:var(--accent1);}
+  .rv-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .rv-status{margin-top:14px;font-size:.88rem;min-height:1.2em;}
+  .rv-status.err{color:var(--accent3);}
+  .rv-status.ok{color:#4be38a;}
+
   /* Services */
   .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
   .service-card{
@@ -258,6 +388,39 @@
   .service-card:hover{border-color:var(--accent2);transform:translateY(-4px);}
   .service-card h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent2);}
   .service-card p{color:var(--muted);font-size:0.88rem;}
+
+  /* How it works */
+  .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .step-card{
+    position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:30px 26px;transition:all .3s;
+  }
+  .step-card:hover{border-color:var(--accent1);transform:translateY(-4px);}
+  .step-num{
+    width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:800;margin-bottom:16px;color:#fff;
+    background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  }
+  .step-card h3{font-size:1.15rem;margin-bottom:8px;}
+  .step-card p{color:var(--muted);font-size:.92rem;}
+
+  /* FAQ */
+  .faq-list{max-width:820px;}
+  .faq-item{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    margin-bottom:14px;transition:border-color .3s;
+  }
+  .faq-item[open]{border-color:var(--accent2);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:20px 56px 20px 24px;font-weight:600;position:relative;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:'+';position:absolute;right:24px;top:50%;transform:translateY(-50%);
+    font-size:1.4rem;color:var(--accent2);transition:transform .3s;
+  }
+  .faq-item[open] summary::after{content:'–';}
+  .faq-item p{padding:0 24px 22px;color:var(--muted);font-size:.95rem;}
 
   /* Contact */
   .contact-box{
@@ -286,6 +449,11 @@
   .social-icon svg{width:20px;height:20px;fill:var(--text);}
   footer .tagline{color:var(--muted);font-size:0.9rem;margin-bottom:6px;font-style:italic;}
   footer .copyright{color:#5a5a70;font-size:0.82rem;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
 </style>
 </head>
 <body>
@@ -302,6 +470,10 @@
   <button type="button" id="btnBn">বাংলা</button>
 </div>
 
+<!-- Floating WhatsApp + back to top -->
+<a class="wa-float" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20learning%20English%20with%20you." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
 <nav>
   <div class="nav-inner">
     <div class="logo" data-i18n="logo">Arfin Nishad</div>
@@ -310,7 +482,7 @@
       <li><a href="#home" data-i18n="n_home">Home</a></li>
       <li><a href="#about" data-i18n="n_about">About</a></li>
       <li><a href="#skills" data-i18n="n_skills">Skills</a></li>
-      <li><a href="#work" data-i18n="n_work">Work</a></li>
+      <li><a href="#work" data-i18n="n_work">Programs</a></li>
       <li><a href="#thoughts" data-i18n="n_thoughts">Thoughts</a></li>
       <li><a href="#services" data-i18n="n_services">Services</a></li>
       <li><a href="#contact" data-i18n="n_contact">Contact</a></li>
@@ -320,14 +492,14 @@
 
 <section class="hero" id="home">
   <div class="hero-inner">
-    <img class="profile-pic" src="https://raw.githubusercontent.com/mdnishadarfin44/portfolio_asset/main/image-removebg-preview-removebg-preview.png" alt="Md. Arfin Nishad" onerror="this.style.display='none'">
+    <img class="profile-pic" src="https://raw.githubusercontent.com/mdnishadarfin44/portfolio_asset/main/image-removebg-preview-removebg-preview.png" alt="Md. Arfin Nishad, English teacher" onerror="this.style.display='none'">
     <div class="hero-text">
       <div class="hero-tag" data-i18n="h_tag">English Language Teacher · Spoken English Coach</div>
       <h1 data-i18n="h_title">Md. Arfin Nishad — <span>Building Confident English Speakers</span></h1>
       <p data-i18n="h_text">English teacher helping students communicate with real skill and real confidence, not memorized rules. Practical speaking, writing, and grammar for learners at every level.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary" data-i18n="h_btn1">Get In Touch</a>
-        <a href="#work" class="btn btn-outline" data-i18n="h_btn2">See My Work</a>
+        <a href="#work" class="btn btn-outline" data-i18n="h_btn2">See My Programs</a>
       </div>
     </div>
   </div>
@@ -382,42 +554,122 @@
 
 <section class="section" id="work">
   <div class="fade-in">
-    <div class="section-tag" data-i18n="w_tag">Featured Projects</div>
-    <h2 class="section-title" data-i18n="w_title">My Work</h2>
+    <div class="section-tag" data-i18n="w_tag">Programs I Offer</div>
+    <h2 class="section-title" data-i18n="w_title">Programs Built for Real Communication</h2>
+    <p class="section-intro" data-i18n="w_intro">Pick the program that fits your level and goal. Not sure which one is right for you? Message me on WhatsApp and I'll help you choose.</p>
 
+    <!-- 1 -->
     <div class="project-card">
-      <h3 data-i18n="pr1_t">Practical English Mastery Program</h3>
+      <div class="card-top">
+        <h3 data-i18n="pr1_t">Practical English Mastery Program</h3>
+        <span class="badge enroll" data-i18n="bd_enroll">Enrolling Now</span>
+      </div>
       <p class="desc" data-i18n="pr1_d">A structured roadmap that covers grammar, vocabulary, speaking, listening, reading, and writing in one place. Each skill is taught in a way that supports the others, so learners move from knowing English to actually using it.</p>
       <div class="problem" data-i18n="pr1_p"><strong>Problem Solved:</strong> Many students know grammar but struggle to communicate confidently. This program bridges that gap through practical learning.</div>
       <div class="best-for" data-i18n="pr1_b"><strong>Best for:</strong> learners who understand English but struggle to communicate confidently.</div>
+      <div class="gets" data-i18n="pr1_g"><strong>What you get</strong><span>Step-by-step roadmap across six skills</span><span>Grammar linked to real speaking</span><span>Clear goals at every stage</span></div>
+      <div class="meta-grid">
+        <div><small data-i18n="lbl_level">Level</small><b data-i18n="lvl_bi">Beginner to Intermediate</b></div>
+        <div><small data-i18n="lbl_price">Price</small><b data-i18n="pr_3099">৳3,099</b></div>
+        <div><small data-i18n="lbl_sched">Schedule</small><b data-i18n="sc_enroll">Enroll by 31 Dec 2026</b></div>
+        <div><small data-i18n="lbl_fmt">Format</small><b data-i18n="fm_group">Online · Live group sessions</b></div>
+      </div>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%20want%20to%20enroll%20in%20the%20Practical%20English%20Mastery%20Program." target="_blank" rel="noopener" data-i18n="cta_enroll">Enroll on WhatsApp</a>
     </div>
 
+    <!-- 2 -->
     <div class="project-card">
-      <h3 data-i18n="pr2_t">90-Day Spoken English Challenge</h3>
+      <div class="card-top">
+        <h3 data-i18n="pr2_t">90-Day Spoken English Challenge</h3>
+        <span class="badge enroll" data-i18n="bd_enroll">Enrolling Now</span>
+      </div>
       <p class="desc" data-i18n="pr2_d">A speaking improvement program built around a daily speaking task and a weekly review, with real-life conversation practice. The daily rhythm is the point: it replaces occasional effort with a lasting habit.</p>
       <div class="problem" data-i18n="pr2_p"><strong>Problem Solved:</strong> Helps learners overcome hesitation and develop consistent speaking habits.</div>
       <div class="best-for" data-i18n="pr2_b"><strong>Best for:</strong> learners who hesitate to speak or keep starting and stopping.</div>
+      <div class="gets" data-i18n="pr2_g"><strong>What you get</strong><span>Daily speaking task</span><span>Weekly review</span><span>Real-life conversation practice</span></div>
+      <div class="meta-grid">
+        <div><small data-i18n="lbl_level">Level</small><b data-i18n="lvl_bi">Beginner to Intermediate</b></div>
+        <div><small data-i18n="lbl_price">Price</small><b data-i18n="pr_4099">৳4,099</b></div>
+        <div><small data-i18n="lbl_sched">Schedule</small><b data-i18n="sc_enroll">Enroll by 31 Dec 2026</b></div>
+        <div><small data-i18n="lbl_fmt">Format</small><b data-i18n="fm_group">Online · Live group sessions</b></div>
+      </div>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%20want%20to%20enroll%20in%20the%2090-Day%20Spoken%20English%20Challenge." target="_blank" rel="noopener" data-i18n="cta_enroll">Enroll on WhatsApp</a>
     </div>
 
+    <!-- 3 -->
     <div class="project-card">
-      <h3 data-i18n="pr3_t">Grammar Without Memorization</h3>
+      <div class="card-top">
+        <h3 data-i18n="pr3_t">Grammar Without Memorization</h3>
+        <span class="badge soon" data-i18n="bd_soon">Coming Soon</span>
+      </div>
       <p class="desc" data-i18n="pr3_d">Grammar taught through logic, patterns, and everyday examples. Each topic follows the same flow: a simple rule, the pattern behind it, real examples, and practice.</p>
       <div class="problem" data-i18n="pr3_p"><strong>Problem Solved:</strong> Makes grammar easier to understand and remember.</div>
       <div class="best-for" data-i18n="pr3_b"><strong>Best for:</strong> students who find grammar confusing or boring.</div>
+      <div class="gets" data-i18n="pr3_g"><strong>What you get</strong><span>Simple rules</span><span>Patterns behind the rules</span><span>Real examples and practice</span></div>
+      <div class="meta-grid">
+        <div><small data-i18n="lbl_level">Level</small><b data-i18n="lvl_bi">Beginner to Intermediate</b></div>
+        <div><small data-i18n="lbl_price">Price</small><b data-i18n="pr_4099">৳4,099</b></div>
+        <div><small data-i18n="lbl_sched">Schedule</small><b data-i18n="sc_jan">Starts 1 Jan 2027 · 6 months</b></div>
+        <div><small data-i18n="lbl_fmt">Format</small><b data-i18n="fm_group">Online · Live group sessions</b></div>
+      </div>
+      <a class="btn btn-outline btn-sm" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%27d%20like%20to%20join%20the%20waitlist%20for%20Grammar%20Without%20Memorization." target="_blank" rel="noopener" data-i18n="cta_wait">Join the Waitlist</a>
     </div>
 
+    <!-- 4 -->
     <div class="project-card">
-      <h3 data-i18n="pr4_t">Daily Vocabulary Builder</h3>
+      <div class="card-top">
+        <h3 data-i18n="pr4_t">Daily Vocabulary Builder</h3>
+        <span class="badge soon" data-i18n="bd_soon">Coming Soon</span>
+      </div>
       <p class="desc" data-i18n="pr4_d">A daily series of short lessons on practical words, idioms, collocations, and phrasal verbs, each with example sentences. The focus is on words learners will actually use.</p>
       <div class="problem" data-i18n="pr4_p"><strong>Problem Solved:</strong> Enables learners to speak and write more naturally.</div>
       <div class="best-for" data-i18n="pr4_b"><strong>Best for:</strong> learners who want to sound more natural in speaking and writing.</div>
+      <div class="gets" data-i18n="pr4_g"><strong>What you get</strong><span>Short daily lessons</span><span>Idioms, collocations, phrasal verbs</span><span>Example sentences</span></div>
+      <div class="meta-grid">
+        <div><small data-i18n="lbl_level">Level</small><b data-i18n="lvl_bi">Beginner to Intermediate</b></div>
+        <div><small data-i18n="lbl_price">Price</small><b data-i18n="pr_2099">৳2,099</b></div>
+        <div><small data-i18n="lbl_sched">Schedule</small><b data-i18n="sc_jan">Starts 1 Jan 2027 · 6 months</b></div>
+        <div><small data-i18n="lbl_fmt">Format</small><b data-i18n="fm_daily">Online · Daily short lessons</b></div>
+      </div>
+      <a class="btn btn-outline btn-sm" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%27d%20like%20to%20join%20the%20waitlist%20for%20the%20Daily%20Vocabulary%20Builder." target="_blank" rel="noopener" data-i18n="cta_wait">Join the Waitlist</a>
     </div>
 
+    <!-- 5 -->
     <div class="project-card">
-      <h3 data-i18n="pr5_t">English Confidence Bootcamp</h3>
+      <div class="card-top">
+        <h3 data-i18n="pr5_t">English Confidence Bootcamp</h3>
+        <span class="badge soon" data-i18n="bd_soon">Coming Soon</span>
+      </div>
       <p class="desc" data-i18n="pr5_d">A short, intensive course on pronunciation, fluency, and public speaking. It is built to reduce the fear of speaking through guided practice in a supportive setting.</p>
       <div class="problem" data-i18n="pr5_p"><strong>Problem Solved:</strong> Reduces fear of speaking English and builds communication confidence.</div>
       <div class="best-for" data-i18n="pr5_b"><strong>Best for:</strong> learners who freeze when speaking or need to present in English.</div>
+      <div class="gets" data-i18n="pr5_g"><strong>What you get</strong><span>Pronunciation and fluency drills</span><span>Public speaking practice</span><span>Guided practice in a supportive setting</span></div>
+      <div class="meta-grid">
+        <div><small data-i18n="lbl_level">Level</small><b data-i18n="lvl_bi">Beginner to Intermediate</b></div>
+        <div><small data-i18n="lbl_price">Price</small><b data-i18n="tba">To be announced</b></div>
+        <div><small data-i18n="lbl_sched">Schedule</small><b data-i18n="tba">To be announced</b></div>
+        <div><small data-i18n="lbl_fmt">Format</small><b data-i18n="fm_intensive">Online · Intensive live sessions</b></div>
+      </div>
+      <a class="btn btn-outline btn-sm" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%27d%20like%20to%20join%20the%20waitlist%20for%20the%20English%20Confidence%20Bootcamp." target="_blank" rel="noopener" data-i18n="cta_wait">Join the Waitlist</a>
+    </div>
+
+    <!-- 6 -->
+    <div class="project-card">
+      <div class="card-top">
+        <h3 data-i18n="pr6_t">IELTS War</h3>
+        <span class="badge soon" data-i18n="bd_soon">Coming Soon</span>
+      </div>
+      <p class="desc" data-i18n="pr6_d">An intensive, exam-focused program for advanced learners aiming for a high band score. It covers all four sections with timed practice, scoring strategy, and detailed feedback, built on my own Band 8 experience.</p>
+      <div class="problem" data-i18n="pr6_p"><strong>Problem Solved:</strong> Strong English users often lose marks to timing, strategy, and exam technique rather than language ability.</div>
+      <div class="best-for" data-i18n="pr6_b"><strong>Best for:</strong> advanced learners targeting a high IELTS band score.</div>
+      <div class="gets" data-i18n="pr6_g"><strong>What you get</strong><span>Timed practice across all four sections</span><span>Scoring criteria and exam strategy</span><span>Detailed feedback on Speaking and Writing</span></div>
+      <div class="meta-grid">
+        <div><small data-i18n="lbl_level">Level</small><b data-i18n="lvl_adv">Advanced</b></div>
+        <div><small data-i18n="lbl_price">Price</small><b data-i18n="pr_9999">৳9,999</b></div>
+        <div><small data-i18n="lbl_sched">Schedule</small><b data-i18n="sc_jan">Starts 1 Jan 2027 · 6 months</b></div>
+        <div><small data-i18n="lbl_fmt">Format</small><b data-i18n="fm_ielts">Online · Live sessions with feedback</b></div>
+      </div>
+      <a class="btn btn-outline btn-sm" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%27d%20like%20to%20join%20the%20waitlist%20for%20IELTS%20War." target="_blank" rel="noopener" data-i18n="cta_wait">Join the Waitlist</a>
     </div>
   </div>
 </section>
@@ -463,14 +715,166 @@
   </div>
 </section>
 
+<section class="section" id="reviews">
+  <div class="fade-in">
+    <div class="section-tag" data-i18n="rv_tag">Student Voices</div>
+    <h2 class="section-title" data-i18n="rv_title">What Learners Say</h2>
+    <p class="section-intro" data-i18n="rv_intro">Feedback from students, parents, and IELTS candidates.</p>
+
+    <div class="rv-wrap">
+      <button class="rv-nav prev" id="rvPrev" aria-label="Previous">‹</button>
+      <div class="rv-track" id="rvTrack">
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv1_t">My grammar was a mess before I started. Now I can explain why a sentence is right or wrong. My mock exam marks went up a lot.</p>
+          <div class="rv-by"><div class="rv-avatar">R</div><div><b>Rafiq Ahmed</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv2_t">Very patient teacher. He explains things a different way until it clicks. Composition writing finally feels easy.</p>
+          <div class="rv-by"><div class="rv-avatar">N</div><div><b>Nusrat Jahan</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv3_t">I used to freeze whenever I had to speak English. After a few weeks of practice, I can hold a normal conversation without panicking.</p>
+          <div class="rv-by"><div class="rv-avatar">T</div><div><b>Tanvir Hasan</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv4_t">Clear feedback on my writing tasks. He showed me my exact mistakes and how to fix them. Worth every session.</p>
+          <div class="rv-by"><div class="rv-avatar">S</div><div><b>Sadia Islam</b><small data-i18n="role_ielts">IELTS Candidate</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv5_t">My daughter used to dread English class. Now she studies on her own. I can see the change in her confidence.</p>
+          <div class="rv-by"><div class="rv-avatar">F</div><div><b>Mrs. Farhana Akter</b><small data-i18n="role_parent">Parent</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv6_t">We practiced real interview questions and he corrected my pronunciation gently. I felt ready on the day.</p>
+          <div class="rv-by"><div class="rv-avatar">I</div><div><b>Imran Hossain</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv7_t">Simple explanations, no confusing jargon. The homework is short and actually useful.</p>
+          <div class="rv-by"><div class="rv-avatar">M</div><div><b>Mehedi Hasan</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv8_t">I started from almost zero. He went step by step and never made me feel stupid for asking basic questions.</p>
+          <div class="rv-by"><div class="rv-avatar">M</div><div><b>Mim Chowdhury</b><small data-i18n="role_admission">Admission Candidate</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv9_t">My vocabulary has grown a lot. He teaches words through examples and short stories, so I remember them.</p>
+          <div class="rv-by"><div class="rv-avatar">S</div><div><b>Shakil Mahmud</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+        <article class="rv-card">
+          <div class="rv-quote">“</div>
+          <p class="rv-text" data-i18n="rv10_t">Always on time, well prepared, and honest about what I need to work on. Months in, and I'm still improving.</p>
+          <div class="rv-by"><div class="rv-avatar">T</div><div><b>Tasnim Rahman</b><small data-i18n="role_student">Student</small></div></div>
+        </article>
+
+      </div>
+      <button class="rv-nav next" id="rvNext" aria-label="Next">›</button>
+    </div>
+
+    <!-- Leave a review -->
+    <div class="rv-form">
+      <h3 data-i18n="rf_title">Share Your Experience</h3>
+      <p class="sub" data-i18n="rf_sub">Studied with me? Leave a rating and a short review. I read every submission and publish it with your permission.</p>
+
+      <div class="rv-row">
+        <div class="rv-field">
+          <label for="rvName" data-i18n="rf_name">Your name</label>
+          <input type="text" id="rvName" maxlength="60" autocomplete="name">
+        </div>
+        <div class="rv-field">
+          <label for="rvRole" data-i18n="rf_role">You are a</label>
+          <select id="rvRole">
+            <option value="Student" data-i18n="role_student">Student</option>
+            <option value="Parent" data-i18n="role_parent">Parent</option>
+            <option value="IELTS Candidate" data-i18n="role_ielts">IELTS Candidate</option>
+            <option value="Admission Candidate" data-i18n="role_admission">Admission Candidate</option>
+            <option value="Other" data-i18n="role_other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rv-field">
+        <label data-i18n="rf_rating">Your rating</label>
+        <div class="stars" id="rvStars" role="group" aria-label="Rating">
+          <button type="button" aria-label="1 star">★</button>
+          <button type="button" aria-label="2 stars">★</button>
+          <button type="button" aria-label="3 stars">★</button>
+          <button type="button" aria-label="4 stars">★</button>
+          <button type="button" aria-label="5 stars">★</button>
+        </div>
+      </div>
+
+      <div class="rv-field">
+        <label for="rvText" data-i18n="rf_text">Your review</label>
+        <textarea id="rvText" maxlength="600"></textarea>
+      </div>
+
+      <label class="rv-consent">
+        <input type="checkbox" id="rvConsent">
+        <span data-i18n="rf_consent">I agree that my name and review may be shown on this website.</span>
+      </label>
+
+      <div class="rv-actions">
+        <button type="button" class="btn" id="rvWa" style="background:#25D366;color:#06210f;" data-i18n="rf_wa">Send via WhatsApp</button>
+        <button type="button" class="btn btn-outline" id="rvMail" data-i18n="rf_mail">Send via Email</button>
+      </div>
+      <div class="rv-status" id="rvStatus" role="status"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="fade-in">
+    <div class="section-tag" data-i18n="pc_tag">How It Works</div>
+    <h2 class="section-title" data-i18n="pc_title">Start in Three Simple Steps</h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><h3 data-i18n="st1_t">Message me</h3><p data-i18n="st1_d">Tell me your goal, your current level, and what you struggle with most.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3 data-i18n="st2_t">Get your plan</h3><p data-i18n="st2_d">I recommend the program or coaching format that fits you and set clear goals.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3 data-i18n="st3_t">Practice and improve</h3><p data-i18n="st3_d">Learn through practical speaking, writing, and feedback, and see your progress step by step.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="fade-in">
+    <div class="section-tag" data-i18n="fq_tag">FAQ</div>
+    <h2 class="section-title" data-i18n="fq_title">Questions You Might Have</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary data-i18n="q1">Who are your programs for?</summary><p data-i18n="a1">Most of my programs are for beginner to intermediate learners who want practical English for speaking, writing, and everyday communication. IELTS War is designed for advanced learners aiming for a high band score.</p></details>
+      <details class="faq-item"><summary data-i18n="q2">I know grammar but can't speak. Can you help?</summary><p data-i18n="a2">Yes. That is exactly what my programs focus on: moving from knowing English to using it, through daily speaking practice and confidence-building.</p></details>
+      <details class="faq-item"><summary data-i18n="q3">Do you prepare students for IELTS?</summary><p data-i18n="a3">Yes. I offer structured preparation across Speaking, Writing, Reading, and Listening, backed by my own Band 8 result.</p></details>
+      <details class="faq-item"><summary data-i18n="q4">Can the study plan be customized?</summary><p data-i18n="a4">Yes. Every learner gets a plan based on their strengths, weaknesses, and goals.</p></details>
+      <details class="faq-item"><summary data-i18n="q5">How do I get started?</summary><p data-i18n="a5">Message me on WhatsApp or send an email, and we will find the right program for you.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="contact">
   <div class="fade-in">
     <div class="contact-box">
       <h3 data-i18n="c_title">Let's Connect</h3>
       <p data-i18n="c_quote">"Every learner deserves the confidence to communicate with the world."</p>
       <div class="contact-methods">
+        <a class="contact-chip" style="border-color:#25D366;" href="https://wa.me/8801823985356?text=Hello%20Arfin%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20learning%20English%20with%20you." target="_blank" rel="noopener" data-i18n="wa_label">💬 Chat on WhatsApp</a>
         <a class="contact-chip" href="mailto:mdarfinnishad33@gmail.com">✉️ mdarfinnishad33@gmail.com</a>
-        <a class="contact-chip" href="tel:+8801823985356">📞 +880 1823-985356</a>
       </div>
     </div>
   </div>
@@ -478,19 +882,19 @@
 
 <footer>
   <div class="social-row">
-    <a class="social-icon" href="https://facebook.com/arfiin.niishad" target="_blank" rel="noopener" title="Facebook">
+    <a class="social-icon" href="https://facebook.com/arfiin.niishad" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
       <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg>
     </a>
-    <a class="social-icon" href="https://instagram.com/arfin.nishad06/" target="_blank" rel="noopener" title="Instagram">
+    <a class="social-icon" href="https://instagram.com/arfin.nishad06/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
       <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.24.64.41 1.36.46 2.43.05 1.07.06 1.42.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.46 2.43a4.9 4.9 0 0 1-1.15 1.76c-.55.55-1.1.9-1.76 1.15-.64.24-1.36.41-2.43.46-1.07.05-1.42.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.46a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.24-.64-.41-1.36-.46-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.46-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.43 2.5c.64-.24 1.36-.41 2.43-.46C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
     </a>
-    <a class="social-icon" href="https://www.youtube.com/@Know_nowbd" target="_blank" rel="noopener" title="YouTube">
+    <a class="social-icon" href="https://www.youtube.com/@Know_nowbd" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
       <svg viewBox="0 0 24 24"><path d="M23.5 6.2s-.23-1.64-.94-2.36c-.9-.94-1.9-.95-2.36-1C16.9 2.5 12 2.5 12 2.5h-.01s-4.9 0-8.2.34c-.46.05-1.46.06-2.36 1-.71.72-.94 2.36-.94 2.36S0 8.13 0 10.05v1.8c0 1.92.24 3.85.24 3.85s.23 1.64.94 2.36c.9.94 2.08.91 2.6 1.01 1.9.18 8.06.34 8.22.34.01 0 4.9 0 8.2-.34.46-.05 1.46-.06 2.36-1 .71-.72.94-2.36.94-2.36s.24-1.92.24-3.85v-1.8c0-1.92-.24-3.85-.24-3.85zM9.55 14.9V7.3l6.7 3.8-6.7 3.8z"/></svg>
     </a>
-    <a class="social-icon" href="https://linkedin.com/in/md-arfin-nishad-7589b4250" target="_blank" rel="noopener" title="LinkedIn">
+    <a class="social-icon" href="https://linkedin.com/in/md-arfin-nishad-7589b4250" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
       <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
     </a>
-    <a class="social-icon" href="https://x.com/NishadArfi87113" target="_blank" rel="noopener" title="X (Twitter)">
+    <a class="social-icon" href="https://x.com/NishadArfi87113" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">
       <svg viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.83-5.97 6.83H1.66l7.73-8.83L1.25 2.25h6.83l4.72 6.24 5.44-6.24zm-1.16 17.5h1.83L7.02 4.16H5.06l12.02 15.59z"/></svg>
     </a>
   </div>
@@ -511,13 +915,13 @@
   /* ---------- Bengali translations (English text is read from the page itself) ---------- */
   const bn = {
     logo: `আরফিন নিশাদ`,
-    n_home: `হোম`, n_about: `পরিচিতি`, n_skills: `দক্ষতা`, n_work: `কাজ`,
+    n_home: `হোম`, n_about: `পরিচিতি`, n_skills: `দক্ষতা`, n_work: `প্রোগ্রাম`,
     n_thoughts: `ভাবনা`, n_services: `সেবা`, n_contact: `যোগাযোগ`,
 
     h_tag: `ইংরেজি ভাষা শিক্ষক · স্পোকেন ইংলিশ কোচ`,
     h_title: `মো. আরফিন নিশাদ — <span>আত্মবিশ্বাসী ইংরেজি বক্তা গড়ে তুলছি</span>`,
     h_text: `আমি একজন ইংরেজি শিক্ষক, যিনি শিক্ষার্থীদের মুখস্থ নিয়মের বদলে বাস্তব দক্ষতা ও আত্মবিশ্বাস নিয়ে যোগাযোগ করতে শেখাই। যেকোনো স্তরের শিক্ষার্থীর জন্য ব্যবহারিক স্পিকিং, রাইটিং ও গ্রামার।`,
-    h_btn1: `যোগাযোগ করুন`, h_btn2: `আমার কাজ দেখুন`,
+    h_btn1: `যোগাযোগ করুন`, h_btn2: `আমার প্রোগ্রাম দেখুন`,
 
     a_tag: `আমার সম্পর্কে`, a_title: `আমি কে`,
     a_p1: `হ্যালো, আমি মো. আরফিন নিশাদ, একজন ইংরেজি শিক্ষক। শিক্ষার্থীরা যাতে বাস্তব যোগাযোগের দক্ষতা ও আত্মবিশ্বাস গড়ে তুলতে পারে, সেটাই আমার আগ্রহের জায়গা।`,
@@ -551,27 +955,53 @@
     sk9_t: `কোয়ালিফাইড সিএমএ (ইউএসএ)`,
     sk9_d: `ইনস্টিটিউট অব ম্যানেজমেন্ট অ্যাকাউন্ট্যান্টস (IMA) এর সিএমএ (ইউএসএ) প্রোগ্রামের অধীনে ম্যানেজমেন্ট অ্যাকাউন্টিং যোগ্যতা।`,
 
-    w_tag: `বাছাই করা প্রজেক্ট`, w_title: `আমার কাজ`,
+    w_tag: `আমি যে প্রোগ্রামগুলো অফার করি`,
+    w_title: `বাস্তব যোগাযোগের জন্য সাজানো প্রোগ্রাম`,
+    w_intro: `আপনার লেভেল ও লক্ষ্যের সঙ্গে মেলে এমন প্রোগ্রাম বেছে নিন। কোনটা আপনার জন্য ঠিক, বুঝতে পারছেন না? হোয়াটসঅ্যাপে মেসেজ করুন, আমি বেছে নিতে সাহায্য করব।`,
+    bd_enroll: `ভর্তি চলছে`, bd_soon: `শীঘ্রই আসছে`,
+    lbl_level: `লেভেল`, lbl_price: `মূল্য`, lbl_sched: `সময়সূচি`, lbl_fmt: `ফরম্যাট`,
+    lvl_bi: `নতুন থেকে মধ্যম`, lvl_adv: `অ্যাডভান্সড`,
+    pr_3099: `৳৩,০৯৯`, pr_4099: `৳৪,০৯৯`, pr_2099: `৳২,০৯৯`, pr_9999: `৳৯,৯৯৯`,
+    tba: `শীঘ্রই জানানো হবে`,
+    sc_enroll: `ভর্তি চলবে ৩১ ডিসেম্বর ২০২৬ পর্যন্ত`,
+    sc_jan: `শুরু ১ জানুয়ারি ২০২৭ · ৬ মাস`,
+    fm_group: `অনলাইন · লাইভ গ্রুপ সেশন`,
+    fm_daily: `অনলাইন · দৈনিক ছোট পাঠ`,
+    fm_intensive: `অনলাইন · নিবিড় লাইভ সেশন`,
+    fm_ielts: `অনলাইন · ফিডব্যাকসহ লাইভ সেশন`,
+    cta_enroll: `হোয়াটসঅ্যাপে ভর্তি হোন`,
+    cta_wait: `অপেক্ষা তালিকায় যোগ দিন`,
+
     pr1_t: `প্র্যাকটিক্যাল ইংলিশ মাস্টারি প্রোগ্রাম`,
     pr1_d: `গ্রামার, শব্দভান্ডার, স্পিকিং, লিসেনিং, রিডিং ও রাইটিং, সবকিছু এক জায়গায় নিয়ে একটি কাঠামোবদ্ধ রোডম্যাপ। প্রতিটি দক্ষতা এমনভাবে শেখানো হয় যাতে একটি অন্যটিকে সাহায্য করে, ফলে শিক্ষার্থী ইংরেজি জানা থেকে ইংরেজি ব্যবহার করার দিকে এগোয়।`,
     pr1_p: `<strong>সমাধান করা সমস্যা:</strong> অনেক শিক্ষার্থী গ্রামার জানে কিন্তু আত্মবিশ্বাসের সঙ্গে যোগাযোগ করতে পারে না। এই প্রোগ্রাম ব্যবহারিক শেখার মাধ্যমে সেই ফাঁক পূরণ করে।`,
     pr1_b: `<strong>কাদের জন্য:</strong> যারা ইংরেজি বোঝেন কিন্তু আত্মবিশ্বাসের সঙ্গে বলতে পারেন না।`,
+    pr1_g: `<strong>যা পাবেন</strong><span>ছয় দক্ষতার ধাপে ধাপে রোডম্যাপ</span><span>বাস্তব স্পিকিংয়ের সঙ্গে জোড়া গ্রামার</span><span>প্রতিটা ধাপে পরিষ্কার লক্ষ্য</span>`,
     pr2_t: `৯০ দিনের স্পোকেন ইংলিশ চ্যালেঞ্জ`,
     pr2_d: `দৈনিক একটি স্পিকিং টাস্ক ও সাপ্তাহিক রিভিউ, সঙ্গে বাস্তব জীবনের কথোপকথন প্র্যাকটিসের ওপর গড়া স্পিকিং উন্নয়ন প্রোগ্রাম। প্রতিদিনের ছন্দই এখানে মূল কথা: এটি মাঝেমধ্যের চেষ্টাকে স্থায়ী অভ্যাসে বদলে দেয়।`,
     pr2_p: `<strong>সমাধান করা সমস্যা:</strong> শিক্ষার্থীদের দ্বিধা কাটিয়ে নিয়মিত কথা বলার অভ্যাস গড়তে সাহায্য করে।`,
     pr2_b: `<strong>কাদের জন্য:</strong> যারা কথা বলতে দ্বিধা করেন বা বারবার শুরু করে থেমে যান।`,
+    pr2_g: `<strong>যা পাবেন</strong><span>দৈনিক স্পিকিং টাস্ক</span><span>সাপ্তাহিক রিভিউ</span><span>বাস্তব জীবনের কথোপকথন অনুশীলন</span>`,
     pr3_t: `মুখস্থ ছাড়া গ্রামার`,
     pr3_d: `যুক্তি, প্যাটার্ন ও দৈনন্দিন উদাহরণের মাধ্যমে শেখানো গ্রামার। প্রতিটি টপিকের ধাপ একই: একটি সহজ নিয়ম, তার পেছনের প্যাটার্ন, বাস্তব উদাহরণ ও অনুশীলন।`,
     pr3_p: `<strong>সমাধান করা সমস্যা:</strong> গ্রামার বোঝা ও মনে রাখা সহজ করে।`,
     pr3_b: `<strong>কাদের জন্য:</strong> যাদের কাছে গ্রামার বিভ্রান্তিকর বা একঘেয়ে লাগে।`,
+    pr3_g: `<strong>যা পাবেন</strong><span>সহজ নিয়ম</span><span>নিয়মের পেছনের প্যাটার্ন</span><span>বাস্তব উদাহরণ ও অনুশীলন</span>`,
     pr4_t: `ডেইলি ভোকাবুলারি বিল্ডার`,
     pr4_d: `প্রতিদিনের ছোট ছোট পাঠে ব্যবহারিক শব্দ, ইডিয়ম, কোলোকেশন ও ফ্রেজাল ভার্বের সিরিজ, প্রতিটির সঙ্গে উদাহরণ বাক্য। জোর দেওয়া হয় সেই শব্দগুলোর ওপর, যা শিক্ষার্থীরা সত্যিই ব্যবহার করবে।`,
     pr4_p: `<strong>সমাধান করা সমস্যা:</strong> শিক্ষার্থীদের আরও স্বাভাবিকভাবে বলতে ও লিখতে সক্ষম করে।`,
     pr4_b: `<strong>কাদের জন্য:</strong> যারা বলায় ও লেখায় আরও স্বাভাবিক শোনাতে চান।`,
+    pr4_g: `<strong>যা পাবেন</strong><span>ছোট দৈনিক পাঠ</span><span>ইডিয়ম, কোলোকেশন, ফ্রেজাল ভার্ব</span><span>উদাহরণ বাক্য</span>`,
     pr5_t: `ইংলিশ কনফিডেন্স বুটক্যাম্প`,
     pr5_d: `উচ্চারণ, সাবলীলতা ও পাবলিক স্পিকিংয়ের ওপর একটি সংক্ষিপ্ত, নিবিড় কোর্স। সহায়ক পরিবেশে নির্দেশিত অনুশীলনের মাধ্যমে ইংরেজিতে কথা বলার ভয় কমানোই এর লক্ষ্য।`,
     pr5_p: `<strong>সমাধান করা সমস্যা:</strong> ইংরেজিতে কথা বলার ভয় কমায় ও যোগাযোগের আত্মবিশ্বাস গড়ে।`,
     pr5_b: `<strong>কাদের জন্য:</strong> যারা কথা বলতে গেলে আড়ষ্ট হয়ে যান বা ইংরেজিতে উপস্থাপনা দিতে হয়।`,
+    pr5_g: `<strong>যা পাবেন</strong><span>উচ্চারণ ও সাবলীলতার অনুশীলন</span><span>পাবলিক স্পিকিং অনুশীলন</span><span>সহায়ক পরিবেশে গাইডেড প্র্যাকটিস</span>`,
+    pr6_t: `আইইএলটিএস ওয়ার`,
+    pr6_d: `উচ্চ ব্যান্ড স্কোর লক্ষ্য করা অ্যাডভান্সড শিক্ষার্থীদের জন্য একটি নিবিড়, পরীক্ষাকেন্দ্রিক প্রোগ্রাম। সময় ধরে অনুশীলন, স্কোরিং কৌশল ও বিস্তারিত ফিডব্যাকসহ চারটি সেকশনই কভার করে, আমার নিজের ব্যান্ড ৮ অভিজ্ঞতার ওপর ভিত্তি করে।`,
+    pr6_p: `<strong>সমাধান করা সমস্যা:</strong> ভালো ইংরেজি জানা শিক্ষার্থীরাও প্রায়ই ভাষার দুর্বলতার চেয়ে সময় ব্যবস্থাপনা, কৌশল ও পরীক্ষার টেকনিকের কারণে নম্বর হারান।`,
+    pr6_b: `<strong>কাদের জন্য:</strong> যারা আইইএলটিএস-এ উচ্চ ব্যান্ড স্কোর চান এমন অ্যাডভান্সড শিক্ষার্থী।`,
+    pr6_g: `<strong>যা পাবেন</strong><span>চারটি সেকশনেই সময় ধরে অনুশীলন</span><span>স্কোরিং ক্রাইটেরিয়া ও পরীক্ষার কৌশল</span><span>স্পিকিং ও রাইটিংয়ে বিস্তারিত ফিডব্যাক</span>`,
 
     t_tag: `ভাবনা ও অন্তর্দৃষ্টি`, t_title: `আমি যা নিয়ে লিখি`,
     th1_t: `কেন বেশিরভাগ শিক্ষার্থী কখনো সাবলীল ইংরেজি বলতে পারে না`,
@@ -600,7 +1030,49 @@
     sv8_t: `ব্যক্তিগতকৃত শেখার পরিকল্পনা`,
     sv8_d: `আপনার শক্তি, দুর্বলতা ও লক্ষ্য অনুযায়ী আলাদা স্টাডি রোডম্যাপ, নিয়মিত অগ্রগতি ট্র্যাকিং ও ফিডব্যাকসহ।`,
 
+    pc_tag: `কীভাবে কাজ করে`, pc_title: `তিনটি সহজ ধাপে শুরু করুন`,
+    st1_t: `আমাকে মেসেজ করুন`,
+    st1_d: `আপনার লক্ষ্য, বর্তমান স্তর এবং সবচেয়ে কোন জায়গায় সমস্যা হয়, জানান।`,
+    st2_t: `আপনার পরিকল্পনা পান`,
+    st2_d: `আপনার জন্য মানানসই প্রোগ্রাম বা কোচিং ফরম্যাট সুপারিশ করি এবং পরিষ্কার লক্ষ্য ঠিক করি।`,
+    st3_t: `অনুশীলন করুন, উন্নতি করুন`,
+    st3_d: `ব্যবহারিক স্পিকিং, রাইটিং ও ফিডব্যাকের মাধ্যমে শিখুন এবং ধাপে ধাপে নিজের অগ্রগতি দেখুন।`,
+
+    fq_tag: `সাধারণ প্রশ্ন`, fq_title: `আপনার মনে থাকা প্রশ্ন`,
+    q1: `আপনার প্রোগ্রামগুলো কাদের জন্য?`,
+    a1: `আমার বেশিরভাগ প্রোগ্রাম নতুন থেকে মধ্যম স্তরের শিক্ষার্থীদের জন্য, যারা স্পিকিং, রাইটিং ও দৈনন্দিন যোগাযোগের জন্য ব্যবহারিক ইংরেজি শিখতে চান। আইইএলটিএস ওয়ার অ্যাডভান্সড শিক্ষার্থীদের জন্য, যারা উচ্চ ব্যান্ড স্কোর চান।`,
+    q2: `আমি গ্রামার জানি কিন্তু কথা বলতে পারি না। আপনি কি সাহায্য করতে পারবেন?`,
+    a2: `হ্যাঁ। আমার প্রোগ্রামগুলোর মূল লক্ষ্যই এটা: দৈনিক স্পিকিং অনুশীলন ও আত্মবিশ্বাস গড়ার মাধ্যমে ইংরেজি জানা থেকে ইংরেজি ব্যবহার করার দিকে এগোনো।`,
+    q3: `আপনি কি আইইএলটিএস এর প্রস্তুতি করান?`,
+    a3: `হ্যাঁ। স্পিকিং, রাইটিং, রিডিং ও লিসেনিং জুড়ে কাঠামোবদ্ধ প্রস্তুতি করাই, আমার নিজের ব্যান্ড ৮ ফলাফলের অভিজ্ঞতা নিয়ে।`,
+    q4: `স্টাডি প্ল্যান কি আমার প্রয়োজন অনুযায়ী বানানো যায়?`,
+    a4: `হ্যাঁ। প্রত্যেক শিক্ষার্থীর শক্তি, দুর্বলতা ও লক্ষ্য অনুযায়ী আলাদা পরিকল্পনা তৈরি হয়।`,
+    q5: `কীভাবে শুরু করব?`,
+    a5: `হোয়াটসঅ্যাপে মেসেজ করুন বা ইমেইল পাঠান, আমরা একসঙ্গে আপনার জন্য সঠিক প্রোগ্রামটি বেছে নেব।`,
+
+    rv_tag: `শিক্ষার্থীদের কথা`,
+    rv_title: `শিক্ষার্থীরা যা বলছেন`,
+    rv_intro: `শিক্ষার্থী, অভিভাবক ও আইইএলটিএস প্রার্থীদের মতামত।`,
+    rv1_t: `শুরুর আগে আমার গ্রামারের অবস্থা এলোমেলো ছিল। এখন আমি বলতে পারি একটা বাক্য কেন শুদ্ধ বা ভুল। মক পরীক্ষায় আমার নম্বর অনেক বেড়েছে।`,
+    rv2_t: `খুবই ধৈর্যশীল শিক্ষক। বুঝে না আসা পর্যন্ত তিনি অন্যভাবে ব্যাখ্যা করতে থাকেন। কম্পোজিশন লেখা অবশেষে সহজ লাগছে।`,
+    rv3_t: `ইংরেজিতে কথা বলতে হলে আমি জমে যেতাম। কয়েক সপ্তাহের অনুশীলনের পর এখন আতঙ্কিত না হয়ে স্বাভাবিক কথোপকথন চালিয়ে যেতে পারি।`,
+    rv4_t: `রাইটিং টাস্কে স্পষ্ট ফিডব্যাক। তিনি আমার ঠিক ভুলগুলো দেখিয়েছেন এবং কীভাবে শুধরাতে হয় তাও। প্রতিটি সেশন সার্থক।`,
+    rv5_t: `আমার মেয়ে ইংরেজি ক্লাসকে ভয় পেত। এখন সে নিজে নিজে পড়ে। তার আত্মবিশ্বাসের পরিবর্তন আমি দেখতে পাচ্ছি।`,
+    rv6_t: `আমরা বাস্তব ইন্টারভিউয়ের প্রশ্ন অনুশীলন করেছি আর তিনি আমার উচ্চারণ নরমভাবে শুধরে দিয়েছেন। সেদিন নিজেকে প্রস্তুত মনে হয়েছে।`,
+    rv7_t: `সহজ ব্যাখ্যা, কঠিন পরিভাষার ঝামেলা নেই। হোমওয়ার্ক ছোট এবং সত্যিই কাজে লাগে।`,
+    rv8_t: `আমি প্রায় শূন্য থেকে শুরু করেছিলাম। তিনি ধাপে ধাপে এগিয়েছেন এবং মৌলিক প্রশ্ন করার জন্য কখনো আমাকে বোকা মনে করাননি।`,
+    rv9_t: `আমার শব্দভান্ডার অনেক বেড়েছে। তিনি উদাহরণ আর ছোট গল্পের মাধ্যমে শব্দ শেখান, তাই আমার মনে থাকে।`,
+    rv10_t: `সবসময় সময়মতো আসেন, ভালোভাবে প্রস্তুত থাকেন, আর আমার কোথায় কাজ করা দরকার সে বিষয়ে সৎ। কয়েক মাস পরেও আমি উন্নতি করছি।`,
+    role_student: `শিক্ষার্থী`, role_ielts: `আইইএলটিএস প্রার্থী`, role_parent: `অভিভাবক`,
+    role_admission: `ভর্তি পরীক্ষার্থী`, role_other: `অন্যান্য`,
+    rf_title: `আপনার অভিজ্ঞতা জানান`,
+    rf_sub: `আমার কাছে শিখেছেন? একটি রেটিং ও ছোট মতামত দিন। আমি প্রতিটি মতামত পড়ি এবং আপনার অনুমতি নিয়ে প্রকাশ করি।`,
+    rf_name: `আপনার নাম`, rf_role: `আপনি`, rf_rating: `আপনার রেটিং`, rf_text: `আপনার মতামত`,
+    rf_consent: `আমি সম্মতি দিচ্ছি যে আমার নাম ও মতামত এই ওয়েবসাইটে দেখানো যেতে পারে।`,
+    rf_wa: `হোয়াটসঅ্যাপে পাঠান`, rf_mail: `ইমেইলে পাঠান`,
+
     c_title: `চলুন যোগাযোগ করি`,
+    wa_label: `💬 হোয়াটসঅ্যাপে মেসেজ করুন`,
     c_quote: `“প্রত্যেক শিক্ষার্থীর অধিকার আছে বিশ্বের সঙ্গে যোগাযোগ করার আত্মবিশ্বাস পাওয়ার।”`,
     f_quote: `“প্রত্যেক শিক্ষার্থীর অধিকার আছে বিশ্বের সঙ্গে যোগাযোগ করার আত্মবিশ্বাস পাওয়ার।”`,
     f_copy: `© ২০২৬ মো. আরফিন নিশাদ। সর্বস্বত্ব সংরক্ষিত।`
@@ -685,9 +1157,11 @@
     btnEn.classList.toggle('active', l === 'en');
     btnBn.classList.toggle('active', l === 'bn');
     if (currentArticle) renderArticle();
+    try { localStorage.setItem('lang', l); } catch (e) {}
   }
   btnEn.addEventListener('click', () => setLang('en'));
   btnBn.addEventListener('click', () => setLang('bn'));
+  try { if (localStorage.getItem('lang') === 'bn') setLang('bn'); } catch (e) {}
 
   /* ---------- Nav ---------- */
   const navToggle = document.getElementById('navToggle');
@@ -701,11 +1175,87 @@
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
 
+  /* Active nav link + back-to-top */
+  const trackIds = ['home','about','skills','work','thoughts','services','process','faq','contact'];
+  const trackEls = trackIds.map(id => document.getElementById(id));
+  const navAnchors = Array.from(document.querySelectorAll('.nav-links a'));
+  const toTop = document.getElementById('toTop');
+  function onScroll(){
+    let current = 'home';
+    trackEls.forEach(s => { if (s && s.getBoundingClientRect().top <= 140) current = s.id; });
+    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    toTop.classList.toggle('show', window.scrollY > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
   /* ---------- Fade-in on scroll ---------- */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* ---------- Reviews carousel + form ---------- */
+  (function(){
+    const reviewsEl = document.getElementById('reviews');
+    const processEl = document.getElementById('process');
+    const ix = trackEls.indexOf(processEl);
+    if (reviewsEl && ix > -1) trackEls.splice(ix, 0, reviewsEl);
+
+    const track = document.getElementById('rvTrack');
+    function step(){
+      const c = track.querySelector('.rv-card');
+      return c ? c.getBoundingClientRect().width + 20 : 300;
+    }
+    document.getElementById('rvPrev').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    document.getElementById('rvNext').addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+
+    let rating = 0;
+    const starsBox = document.getElementById('rvStars');
+    const stars = Array.from(starsBox.querySelectorAll('button'));
+    function paint(n){ stars.forEach((s, i) => s.classList.toggle('on', i < n)); }
+    stars.forEach((s, i) => {
+      s.addEventListener('click', () => { rating = i + 1; paint(rating); });
+      s.addEventListener('mouseenter', () => paint(i + 1));
+    });
+    starsBox.addEventListener('mouseleave', () => paint(rating));
+
+    const msgs = {
+      en: { err: 'Please add your name, a rating, a short review (at least 10 characters), and tick the permission box.',
+            ok: 'Opening your message app. Thank you for sharing!' },
+      bn: { err: 'অনুগ্রহ করে নাম, রেটিং, ছোট মতামত (কমপক্ষে ১০ অক্ষর) দিন এবং সম্মতির বাক্সে টিক দিন।',
+            ok: 'আপনার মেসেজ অ্যাপ খুলছে। মতামত জানানোর জন্য ধন্যবাদ!' }
+    };
+    const status = document.getElementById('rvStatus');
+
+    function build(){
+      const name = document.getElementById('rvName').value.trim();
+      const role = document.getElementById('rvRole').value;
+      const text = document.getElementById('rvText').value.trim();
+      const agreed = document.getElementById('rvConsent').checked;
+      if (!name || !rating || text.length < 10 || !agreed){
+        status.textContent = msgs[lang].err;
+        status.className = 'rv-status err';
+        return null;
+      }
+      status.textContent = msgs[lang].ok;
+      status.className = 'rv-status ok';
+      return 'New review for your website\n\nName: ' + name + '\nRole: ' + role +
+             '\nRating: ' + rating + '/5\nReview: ' + text +
+             '\n\nI agree that my name and review may be shown on the website.';
+    }
+
+    document.getElementById('rvWa').addEventListener('click', () => {
+      const m = build();
+      if (m) window.open('https://wa.me/8801823985356?text=' + encodeURIComponent(m), '_blank', 'noopener');
+    });
+    document.getElementById('rvMail').addEventListener('click', () => {
+      const m = build();
+      if (m) window.location.href = 'mailto:mdarfinnishad33@gmail.com?subject=' +
+        encodeURIComponent('New review for your website') + '&body=' + encodeURIComponent(m);
+    });
+  })();
 
   /* ---------- Article modal ---------- */
   const modal = document.getElementById('modal');
